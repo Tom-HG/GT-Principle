@@ -1,7 +1,4 @@
 # Revisiting Speculative Sampling: A Generic Tree Construction Principle for LLM Inference Acceleration.
-------
-
-
 
 ## Install
 
