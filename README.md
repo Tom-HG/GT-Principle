@@ -1,6 +1,6 @@
 # Max-Speedup Speculative Sampling: A Generic Tree Construction Principle.
 
-## Abstrac
+## Abstract
 Speculative sampling has emerged as a promising approach to accelerating large language model (LLM) inference by leveraging a lightweight draft model to propose multiple candidate tokens, which are then verified in parallel by a target model. 
 Recent methods enhance this process by structuring candidate sequences into a token tree for more efficient verification. 
 However, existing tree construction methods overly rely on acceptance length as a proxy for speedup.
@@ -61,5 +61,6 @@ MEDUSA: https://github.com/FasterDecoding/Medusa?tab=readme-ov-file#medusa-1
 HYDRA: https://github.com/zankner/hydra?tab=readme-ov-file#model-weights
 
 ## Acknowledgments
-This codebase is built from [Spec-bench](https://github.com/hemingkx/Spec-Bench/blob/main/Readme.md), [Sequoia]~(https://github.com/Infini-AI-Lab/Sequoia), [EAGLE]~(https://github.com/SafeAILab/EAGLE), [Medusa](https://github.com/FasterDecoding/Medusa).
+This codebase is built from [Spec-bench](https://github.com/hemingkx/Spec-Bench/blob/main/Readme.md), [Sequoia](https://github.com/Infini-AI-Lab/Sequoia), [EAGLE](https://github.com/SafeAILab/EAGLE), [Medusa](https://github.com/FasterDecoding/Medusa).
+
 
