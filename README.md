@@ -1,14 +1,14 @@
-# Max-Speedup Speculative Sampling: A Generic Tree Construction Principle.
+# From Length to Speed: A Generic Tree Construction Principle for Speculative Decoding
 
 ## Abstract
-Speculative sampling has emerged as a promising approach to accelerating large language model (LLM) inference by leveraging a lightweight draft model to propose multiple candidate tokens, which are then verified in parallel by a target model. 
-Recent methods enhance this process by structuring candidate sequences into a token tree for more efficient verification. 
-However, existing tree construction methods overly rely on acceptance length as a proxy for speedup.
-Such an indirect pursuit renders it challenging to achieve the optimal tree structure for maximum speedup.
-In this paper, we first revisit prior approaches and find they suffer from two key limitations: analytical intractability and the assumption of node independence.
-We then redefine the costs and benefits of each tree node, derive a function that characterizes the relationship between time reduction and draft length, and prove its convexity. 
-Finally, we extend this analytical framework to tree structures, and propose a general principle for tree construction aimed at maximizing speedup.
-Applying this principle to state-of-the-art tree-based speculative sampling methods consistently delivers significant gains, improving overall performance by 4\% to 14\% and achieving end-to-end speedup of 1.97× to 2.68×.
+Speculative decoding is pivotal for accelerating Large Language Model (LLM) inference, yet existing tree-based methods are limited by rigid heuristics that prioritize average acceptance length. 
+We argue that this length-centric objective often misaligns with actual wall-clock latency, leading to resource misallocation where fixed budgets fail to capture high-potential nodes or waste computation on inefficient ones.
+To address this, we propose a speed-oriented tree construction framework. 
+Theoretically, we discard restrictive node homogeneity assumptions to prove that total inference time is a convex function of tree size, revealing a unique optimal operating point.
+We introduce the \textbf{Greater-Than (GT) Principle}, which dynamically constructs trees by selecting nodes strictly based on positive net latency benefits. 
+Extensive empirical evaluation confirms that our method consistently outperforms state-of-the-art baselines across diverse model architectures. 
+Our approach achieves peak wall-clock speedups of up to 4.00$\times$, delivering a substantial relative improvement of 17\% (an absolute gain of +0.58$\times$) over the strongest existing methods on Llama3-70B.
+
 
 ## Install
 
@@ -62,5 +62,6 @@ HYDRA: https://github.com/zankner/hydra?tab=readme-ov-file#model-weights
 
 ## Acknowledgments
 This codebase is built from [Spec-bench](https://github.com/hemingkx/Spec-Bench/blob/main/Readme.md), [Sequoia](https://github.com/Infini-AI-Lab/Sequoia), [EAGLE](https://github.com/SafeAILab/EAGLE), [Medusa](https://github.com/FasterDecoding/Medusa).
+
 
 
