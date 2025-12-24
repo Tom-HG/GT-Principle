@@ -9,6 +9,7 @@ We introduce the \textbf{Greater-Than (GT) Principle}, which dynamically constru
 Extensive empirical evaluation confirms that our method consistently outperforms state-of-the-art baselines across diverse model architectures. 
 Our approach achieves peak wall-clock speedups of up to 4.00$\times$, delivering a substantial relative improvement of 17\% (an absolute gain of +0.58$\times$) over the strongest existing methods on Llama3-70B.
 
+![fig](./fig/fig-1.pdf)
 
 ## Install
 
@@ -62,6 +63,7 @@ HYDRA: https://github.com/zankner/hydra?tab=readme-ov-file#model-weights
 
 ## Acknowledgments
 This codebase is built from [Spec-bench](https://github.com/hemingkx/Spec-Bench/blob/main/Readme.md), [Sequoia](https://github.com/Infini-AI-Lab/Sequoia), [EAGLE](https://github.com/SafeAILab/EAGLE), [Medusa](https://github.com/FasterDecoding/Medusa).
+
 
 
 
