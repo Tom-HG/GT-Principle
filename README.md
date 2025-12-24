@@ -10,35 +10,48 @@ Extensive empirical evaluation confirms that our method consistently outperforms
 Our approach achieves peak wall-clock speedups of up to 4.00$\times$, delivering a substantial relative improvement of 17\% (an absolute gain of +0.58$\times$) over the strongest existing methods on Llama3-70B.
 
 
-![image](https://github.com/Tom-HG/MaxSps/blob/main/fig/fig-1.pdf)
+![image](fig/fig-1.png)
 
 ## Install
 
 ```
-conda create -n maxsps python=3.12
-conda activate maxsps
+conda create -n gt python=3.11
+conda activate gt
 conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
 pip install -r requirements.txt
 ```
 
 ## Datasets
 
-The datasets are in data/spec_bench/question.jsonl which includes six different subtasks: multi-round conversations, translation, summarization, question answering, mathematical reasoning, and retrieval enhancement generation. These correspond to the datasets MT-bench, WMT14 DE-EN, CNN/Daily Mail, Natural Questions, GSM8K, and DPR, respectively.
+The datasets are in Spec-bench/data/spec_bench/question.jsonl and EAGLE/eagle/data which includes six different subtasks: multi-round conversations, translation, summarization, question answering, mathematical reasoning, and retrieval enhancement generation. These correspond to the datasets MT-bench, WMT14 DE-EN, CNN/Daily Mail, Natural Questions, GSM8K, and DPR, respectively.
 
 ## Tree construction
 
-The Dynamic tree optimization (EAGLE-2+GE) code is in model/eagle2/cents.py "topK_genrate_new()".
-
-The Static tree optimization (EAGLE+GE) in model/eagle/choicea.py.
+The Dynamic tree optimization (GT) code is in EAGLE/eagle/model/cents.py "topK_genrate_gt()".
 
 ## Usage
 
 For vicuna series models:
 ```
+cd Spec-bench
 bash 7b_eval.sh
 bash 13b_eval.sh
 bash 33b_eval.sh
 ```
+
+For Qwen and Llama3 series models:
+```
+cd EAGLE
+bash llama3_eval.sh
+bash qwen3_eval.sh
+```
+
+## Result
+Changing the speed.py file with tokenizer, jsonl_file and jsonl_file_base.
+```
+python spped.py
+```
+
 
 ## Hugging face model
 The base models used in expriment are from hugging face, so use the following code to download the models to your own path.
