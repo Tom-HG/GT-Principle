@@ -1,4 +1,4 @@
-# From Length to Speed: A Generic Tree Construction Principle for Speculative Decoding
+# Revisiting Speculative Decoding: A Generic Tree Construction Principle for LLM Inference Acceleration
 
 ## Abstract
 Tree-based speculative decoding has emerged as a leading strategy for accelerating Large Language Model (LLM) inference.
