@@ -1,16 +1,16 @@
 # From Length to Speed: A Generic Tree Construction Principle for Speculative Decoding
 
 ## Abstract
-Speculative decoding is pivotal for accelerating Large Language Model (LLM) inference, yet existing tree-based methods are limited by rigid heuristics that prioritize average acceptance length. 
-We argue that this length-centric objective often misaligns with actual wall-clock latency, leading to resource misallocation where fixed budgets fail to capture high-potential nodes or waste computation on inefficient ones.
-To address this, we propose a speed-oriented tree construction framework. 
-Theoretically, we discard restrictive node homogeneity assumptions to prove that total inference time is a convex function of tree size, revealing a unique optimal operating point.
-We introduce the \textbf{Greater-Than (GT) Principle}, which dynamically constructs trees by selecting nodes strictly based on positive net latency benefits. 
-Extensive empirical evaluation confirms that our method consistently outperforms state-of-the-art baselines across diverse model architectures. 
-Our approach achieves peak wall-clock speedups of up to 4.00$\times$, delivering a substantial relative improvement of 17\% (an absolute gain of +0.58$\times$) over the strongest existing methods on Llama3-70B.
+Tree-based speculative decoding has emerged as a leading strategy for accelerating Large Language Model (LLM) inference.
+However, existing methods erroneously rely on acceptance length as a proxy for speedup, rather than directly optimizing for wall-clock time.
+This misalignment causes inefficient resource allocation, where nodes with low acceptance probability consume budget while high-probability candidates are excluded.
+To address this, we theoretically prove that inference latency is strictly convex with respect to tree size, revealing a unique global optimum. 
+Leveraging this property, we introduce the Greater-Than (GT) Principle. 
+This dynamic framework constructs trees by including nodes if and only if they yield a net latency reduction. 
+Extensive experiments show that our method consistently outperforms state-of-the-art baselines, achieving up to 4.00$\times$ speedups and a 17\% relative throughput improvement.
 
 
-![image](fig/fig-1.png)
+
 
 ## Install
 
